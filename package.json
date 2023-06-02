@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
+    "initdb": "node ./bin/initdb.js",
     "dev": "cross-env PORT=5000 NODE_ENV=development DEBUG=NODEAPI:* nodemon"
   },
   "dependencies": {
