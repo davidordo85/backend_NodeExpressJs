@@ -1,5 +1,7 @@
 # Backend Express.js
 
+`This is a backend for a social network for buying and selling`
+
 ## Deploy
 
 ---
