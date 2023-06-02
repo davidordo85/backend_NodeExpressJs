@@ -3,7 +3,7 @@
         "name": "Reloj casio",
         "price": 10,
         "quantity": 20,
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam feugiat sem non massa sagittis, ut luctus lectus luctus. Suspendisse consectetur velit eu ex varius, eget tincidunt lectus iaculis. Fusce vitae rutrum mauris, ut malesuada enim. Donec euismod velit ut volutpat finibus. Nam posuere finibus tincidunt. Sed in feugiat massa. Sed dictum magna sed diam convallis, in vulputate turpis semper. Maecenas feugiat ligula nec nisi vestibulum posuere. Curabitur volutpat nisl augue, id elementum nulla suscipit in. Aliquam id tellus vel mi pulvinar efficitur. Curabitur lacinia faucibus leo, vel lobortis eros rutrum nec. Maecenas vel facilisis urna. Cras congue arcu id libero pretium, a euismod enim lacinia. Nulla facilisi. Morbi sed metus ac felis elementum congue eget in purus.",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam feugiat sem non massa sagittis.",
         "image": [
             "image1",
             "image2",
@@ -20,7 +20,7 @@
         "name": "Reloj rolex",
         "price": 1000,
         "quantity": 20,
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam feugiat sem non massa sagittis, ut luctus lectus luctus. Suspendisse consectetur velit eu ex varius, eget tincidunt lectus iaculis. Fusce vitae rutrum mauris, ut malesuada enim. Donec euismod velit ut volutpat finibus. Nam posuere finibus tincidunt. Sed in feugiat massa. Sed dictum magna sed diam convallis, in vulputate turpis semper. Maecenas feugiat ligula nec nisi vestibulum posuere. Curabitur volutpat nisl augue, id elementum nulla suscipit in. Aliquam id tellus vel mi pulvinar efficitur. Curabitur lacinia faucibus leo, vel lobortis eros rutrum nec. Maecenas vel facilisis urna. Cras congue arcu id libero pretium, a euismod enim lacinia. Nulla facilisi. Morbi sed metus ac felis elementum congue eget in purus.",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam feugiat sem non massa sagittis.",
         "image": [
             "image1",
             "image2",
