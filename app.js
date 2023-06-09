@@ -50,12 +50,16 @@ app.use(function (err, req, res, next) {
   res.status(err.status || 500);
 
   // Send JSON response for API routes
-  if (req.originalUrl.startsWith('/api/')) {
+  if (isAPIRequest(req)) {
     res.json({ error: err.message });
   } else {
     // Render error page for other routes
     res.render('error');
   }
 });
+
+function isAPIRequest(req) {
+  return req.originalUrl.indexOf('/api/') === 0;
+}
 
 module.exports = app;
