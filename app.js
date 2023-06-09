@@ -16,10 +16,10 @@ app.engine('html', require('ejs').__express);
 app.locals.title = 'Backend compra ventas Node.js';
 
 app.use(logger('dev'));
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(cors());
 app.use(express.static(path.join(__dirname, 'public')));
 
 /**
