@@ -41,9 +41,40 @@ const productsSchema = mongoose.Schema({
     required: true,
     maxlength: 500,
   },
-  image: {
+  images: {
     type: Array,
     required: true,
+    validate: {
+      validator: function (images) {
+        // Verificar si el valor es un array
+        if (!Array.isArray(images)) {
+          throw new Error('Images must be an array');
+        }
+
+        // Verificar cada elemento del array
+        for (let i = 0; i < images.length; i++) {
+          const image = images[i];
+
+          // Verificar si el elemento no es una cadena de texto
+          if (typeof image !== 'string') {
+            throw new Error('Invalid image format');
+          }
+
+          // Verificar si la cadena de texto no corresponde a una extensión de imagen permitida
+          const allowedExtensions = ['.jpg', '.jpeg', '.png'];
+          const fileExtension = image
+            .substring(image.lastIndexOf('.'))
+            .toLowerCase();
+          if (!allowedExtensions.includes(fileExtension)) {
+            throw new Error('Invalid image extension');
+          }
+        }
+
+        // Todas las imágenes son válidas
+        return true;
+      },
+      message: 'Invalid image format',
+    },
   },
   rating: {
     type: Number,
@@ -51,7 +82,7 @@ const productsSchema = mongoose.Schema({
     min: 0,
     max: 5,
   },
-  category: {
+  categories: {
     type: Array,
     required: true,
   },

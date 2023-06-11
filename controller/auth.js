@@ -38,8 +38,8 @@ router.post('/login', async (req, res, next) => {
 
 router.post('/register', async (req, res, next) => {
   try {
-    const { email, password } = req.body;
-    console.log(email, password);
+    const { email, password, name, birthdate } = req.body;
+    console.log(email, password, name, birthdate);
 
     const existingUser = await User.findOne({ email });
 
@@ -54,6 +54,8 @@ router.post('/register', async (req, res, next) => {
     const newUser = new User({
       email,
       password: hash,
+      name,
+      birthdate,
     });
 
     await newUser.save();
