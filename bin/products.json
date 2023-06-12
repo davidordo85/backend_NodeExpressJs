@@ -5,9 +5,7 @@
         "quantity": 20,
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam feugiat sem non massa sagittis.",
         "images": [
-            "image1.jpg",
-            "image2.jpg",
-            "image3.png"
+            "casio-2.jpg"
         ],
         "rating": 4.5,
         "categories": [
@@ -22,11 +20,107 @@
         "quantity": 20,
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam feugiat sem non massa sagittis.",
         "images": [
-            "image1.png",
-            "image2.jpg",
-            "image3.png"
+            "rolex-1.jpg",
+            "rolex-2.jpg",
+            "rolex-3.jpg"
         ],
         "rating": 4.5,
+        "categories": [
+            "category1",
+            "category2",
+            "category3"
+        ]
+    },
+    {
+        "name": "Reloj lotus",
+        "price": 1000,
+        "quantity": 20,
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam feugiat sem non massa sagittis.",
+        "images": [
+            "lotus-1.jpg",
+            "lotus-2.jpg"
+        ],
+        "rating": 4,
+        "categories": [
+            "category1",
+            "category2",
+            "category3"
+        ]
+    },
+    {
+        "name": "Reloj casio calculator",
+        "price": 26,
+        "quantity": 20,
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam feugiat sem non massa sagittis.",
+        "images": [
+            "casio-calculator-1.jpg",
+            "casio-calculator-2.jpg"
+        ],
+        "rating": 5,
+        "categories": [
+            "category1",
+            "category2",
+            "category3"
+        ]
+    },
+    {
+        "name": "Reloj casio radio",
+        "price": 30,
+        "quantity": 20,
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam feugiat sem non massa sagittis.",
+        "images": [
+            "casio-radio-1.jpg",
+            "casio-radio-2.jpg",
+            "casio-radio-3.jpg"
+        ],
+        "rating": 3.5,
+        "categories": [
+            "category1",
+            "category2",
+            "category3"
+        ]
+    },
+    {
+        "name": "Reloj pared",
+        "price": 100,
+        "quantity": 20,
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam feugiat sem non massa sagittis.",
+        "images": [
+            "wall-1.jpg",
+            "wall-2.jpg"
+        ],
+        "rating": 2.5,
+        "categories": [
+            "category1",
+            "category2",
+            "category3"
+        ]
+    },
+    {
+        "name": "Smartwatch",
+        "price": 80,
+        "quantity": 20,
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam feugiat sem non massa sagittis.",
+        "images": [
+            "smartwatch.jpg"
+        ],
+        "rating": 3,
+        "categories": [
+            "category1",
+            "category2",
+            "category3"
+        ]
+    },
+    {
+        "name": "Apple watch",
+        "price": 500,
+        "quantity": 20,
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam feugiat sem non massa sagittis.",
+        "images": [
+            "apple-watch.jpg",
+            "apple-watch-1.jpg"
+        ],
+        "rating": 1,
         "categories": [
             "category1",
             "category2",
