@@ -14,16 +14,7 @@ router.get('/', async function (req, res, next) {
   try {
     const result = await Products.find();
 
-    // Mapear las fotos de los productos a su URL en la carpeta pública
-    const productsWithPhotoURLs = result.map(product => {
-      const photoURL = `../../public/images/${product.photoFileName}`; // Ruta a la carpeta pública y el nombre de la foto del producto
-      return {
-        ...product.toObject(),
-        photoURL,
-      };
-    });
-
-    res.status(200).json({ success: true, result: productsWithPhotoURLs });
+    res.status(200).json({ success: true, result: result });
   } catch (err) {
     next(err);
   }

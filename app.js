@@ -12,6 +12,7 @@ require('./models/connectMongoose');
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'html');
 app.engine('html', require('ejs').__express);
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.locals.title = 'Backend compra ventas Node.js';
 
