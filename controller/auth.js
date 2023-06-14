@@ -5,6 +5,7 @@ const router = express.Router();
 const jwt = require('jsonwebtoken');
 
 const { User } = require('../models');
+const jwtAuth = require('../lib/jwtAuth');
 
 router.post('/login', async (req, res, next) => {
   try {
@@ -66,6 +67,12 @@ router.post('/register', async (req, res, next) => {
   } catch (err) {
     next(err);
   }
+});
+
+router.get('/getUser', jwtAuth, async (req, res, next) => {
+  console.log(req.user);
+  const { _id, role } = req.user;
+  res.json({ userId: _id, userRole: role });
 });
 
 module.exports = router;
