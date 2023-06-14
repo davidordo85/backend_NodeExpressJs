@@ -8,6 +8,11 @@ const userSchema = mongoose.Schema({
   password: { type: String, required: true },
   name: { type: String, required: true },
   birthdate: { type: Date, required: true },
+  role: {
+    type: String,
+    enum: ['user', 'seller'],
+    default: 'user',
+  },
 });
 
 userSchema.path('email').validate(function (value) {

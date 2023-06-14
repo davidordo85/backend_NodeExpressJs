@@ -19,8 +19,10 @@ router.post('/login', async (req, res, next) => {
       throw error;
     }
 
+    const role = user.role;
+
     jwt.sign(
-      { _id: user._id },
+      { _id: user._id, role },
       process.env.JWT_SECRET,
       { expiresIn: '2h' },
       (err, jwtToken) => {
