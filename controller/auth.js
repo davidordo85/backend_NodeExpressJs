@@ -70,7 +70,6 @@ router.post('/register', async (req, res, next) => {
 });
 
 router.get('/getUser', jwtAuth, async (req, res, next) => {
-  console.log(req.user);
   const { _id, role } = req.user;
   res.json({ userId: _id, userRole: role });
 });
