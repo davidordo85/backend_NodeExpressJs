@@ -78,13 +78,21 @@ const productsSchema = mongoose.Schema({
   },
   rating: {
     type: Number,
-    required: true,
+    default: 0,
     min: 0,
     max: 5,
   },
   categories: {
     type: Array,
     required: true,
+  },
+  createdBy: {
+    type: String,
+    required: true,
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now,
   },
 });
 

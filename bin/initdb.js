@@ -37,6 +37,7 @@ async function initUsers() {
     password: await User.hashPassword('12345678'),
     name: 'administrator',
     birthdate: '1990-01-01',
+    role: 'seller',
   });
   console.log(`Insert ${result.length} user${result.length > 1 ? 's' : ''}.`);
 }
