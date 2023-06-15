@@ -12,7 +12,8 @@
             "category1",
             "category2",
             "category3"
-        ]
+        ],
+        "createdBy": "648a57144f25acb849aa5115"
     },
     {
         "name": "Reloj rolex",
@@ -29,7 +30,8 @@
             "category1",
             "category2",
             "category3"
-        ]
+        ],
+        "createdBy": "648a57144f25acb849aa5115"
     },
     {
         "name": "Reloj lotus",
@@ -45,7 +47,8 @@
             "category1",
             "category2",
             "category3"
-        ]
+        ],
+        "createdBy": "648a57144f25acb849aa5115"
     },
     {
         "name": "Reloj casio calculator",
@@ -61,7 +64,8 @@
             "category1",
             "category2",
             "category3"
-        ]
+        ],
+        "createdBy": "648a57144f25acb849aa5115"
     },
     {
         "name": "Reloj casio radio",
@@ -78,7 +82,8 @@
             "category1",
             "category2",
             "category3"
-        ]
+        ],
+        "createdBy": "648a57144f25acb849aa5115"
     },
     {
         "name": "Reloj pared",
@@ -94,7 +99,8 @@
             "category1",
             "category2",
             "category3"
-        ]
+        ],
+        "createdBy": "648a57144f25acb849aa5115"
     },
     {
         "name": "Smartwatch",
@@ -109,7 +115,8 @@
             "category1",
             "category2",
             "category3"
-        ]
+        ],
+        "createdBy": "648a57144f25acb849aa5115"
     },
     {
         "name": "Apple watch",
@@ -125,6 +132,7 @@
             "category1",
             "category2",
             "category3"
-        ]
+        ],
+        "createdBy": "648a57144f25acb849aa5115"
     }
 ]
