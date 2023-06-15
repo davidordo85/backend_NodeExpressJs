@@ -25,11 +25,59 @@ var upload = multer({ storage });
 
 router.get('/', async function (req, res, next) {
   try {
-    const result = await Products.find();
+    const {
+      name,
+      price,
+      rating,
+      category,
+      categories,
+      createdAt,
+      limit,
+      skip,
+      fields,
+      sort,
+    } = req.query;
+
+    const filter = {};
+
+    if (name) {
+      filter.name = new RegExp('^' + name, 'i');
+    }
+
+    if (price) {
+      filter.price = price;
+    }
+
+    if (rating) {
+      filter.rating = rating;
+    }
+
+    if (category) {
+      filter.categories = category;
+    }
+
+    if (categories && Array.isArray(categories) && categories.length > 0) {
+      filter.categories = { $in: categories };
+    }
+
+    if (createdAt) {
+      filter.createdAt = createdAt;
+    }
+
+    const parsedLimit = parseInt(limit, 10);
+    const parsedSkip = parseInt(skip, 10);
+
+    const result = await Products.list(
+      filter,
+      parsedLimit,
+      parsedSkip,
+      fields,
+      sort,
+    );
 
     res.status(200).json({ success: true, result: result });
-  } catch (err) {
-    next(err);
+  } catch (error) {
+    next(error);
   }
 });
 
