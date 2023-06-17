@@ -81,6 +81,57 @@ router.get('/', async function (req, res, next) {
   }
 });
 
+// Get /api/products/tags
+router.get('/categories', async (req, res) => {
+  try {
+    const dbCategories = await Products.distinct('categories'); // Obtener categorías de la base de datos
+
+    const additionalCategories = [
+      'Electronics',
+      'Fashion',
+      'Home and Garden',
+      'Sports and Fitness',
+      'Automotive',
+      'Toys and Games',
+      'Books and Magazines',
+      'Beauty and Personal Care',
+      'Arts and Crafts',
+      'Music and Instruments',
+      'Appliances',
+      'Furniture',
+      'Clothing and Accessories',
+      'Shoes',
+      'Jewelry and Watches',
+      'Health and Wellness',
+      'Musical Instruments',
+      'Collectibles',
+      'Consumer Electronics',
+      'Computers and Accessories',
+      'Phones and Accessories',
+      'Cameras and Photography',
+      'Video Games and Consoles',
+      'Baby Items',
+      'Pet Supplies',
+      'Food and Beverages',
+      'Office Supplies',
+      'Tools and Home Improvement',
+      'Travel and Experiences',
+      'Services',
+    ]; // Crear una lista de categorías adicionales
+
+    const allCategories = [
+      ...new Set([...dbCategories, ...additionalCategories]),
+    ]; // Combinar los dos conjuntos de categorías eliminando duplicados
+
+    res.status(200).json({ success: true, result: allCategories });
+  } catch (error) {
+    console.error(error);
+    res
+      .status(500)
+      .json({ success: false, error: 'Error retrieving categories' });
+  }
+});
+
 /*
  * GET /api/v1/products/:id
  */

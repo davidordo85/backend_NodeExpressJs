@@ -1,6 +1,6 @@
 [
     {
-        "name": "Reloj casio",
+        "name": "Casio Watch",
         "price": 10,
         "quantity": 20,
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam feugiat sem non massa sagittis.",
@@ -9,14 +9,15 @@
         ],
         "rating": 4.5,
         "categories": [
-            "category1",
-            "category2",
-            "category3"
+            "Electronics",
+            "Fashion",
+            "Sports and Fitness",
+            "Jewelry and Watches"
         ],
         "createdBy": "648a57144f25acb849aa5115"
     },
     {
-        "name": "Reloj rolex",
+        "name": "Rolex Watch",
         "price": 1000,
         "quantity": 20,
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam feugiat sem non massa sagittis.",
@@ -27,14 +28,13 @@
         ],
         "rating": 4.5,
         "categories": [
-            "category1",
-            "category2",
-            "category3"
+            "Fashion",
+            "Jewelry and Watches"
         ],
         "createdBy": "648a57144f25acb849aa5115"
     },
     {
-        "name": "Reloj lotus",
+        "name": "Lotus Watch",
         "price": 1000,
         "quantity": 20,
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam feugiat sem non massa sagittis.",
@@ -44,14 +44,13 @@
         ],
         "rating": 4,
         "categories": [
-            "category1",
-            "category2",
-            "category3"
+            "Fashion",
+            "Jewelry and Watches"
         ],
         "createdBy": "648a57144f25acb849aa5115"
     },
     {
-        "name": "Reloj casio calculator",
+        "name": "Casio Calculator Watch",
         "price": 26,
         "quantity": 20,
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam feugiat sem non massa sagittis.",
@@ -61,14 +60,15 @@
         ],
         "rating": 5,
         "categories": [
-            "category1",
-            "category2",
-            "category3"
+            "Electronics",
+            "Fashion",
+            "Sports and Fitness",
+            "Jewelry and Watches"
         ],
         "createdBy": "648a57144f25acb849aa5115"
     },
     {
-        "name": "Reloj casio radio",
+        "name": "Casio Radio Watch",
         "price": 30,
         "quantity": 20,
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam feugiat sem non massa sagittis.",
@@ -79,14 +79,15 @@
         ],
         "rating": 3.5,
         "categories": [
-            "category1",
-            "category2",
-            "category3"
+            "Electronics",
+            "Fashion",
+            "Sports and Fitness",
+            "Jewelry and Watches"
         ],
         "createdBy": "648a57144f25acb849aa5115"
     },
     {
-        "name": "Reloj pared",
+        "name": "Wall Clock",
         "price": 100,
         "quantity": 20,
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam feugiat sem non massa sagittis.",
@@ -96,9 +97,7 @@
         ],
         "rating": 2.5,
         "categories": [
-            "category1",
-            "category2",
-            "category3"
+            "Home and Garden"
         ],
         "createdBy": "648a57144f25acb849aa5115"
     },
@@ -112,14 +111,14 @@
         ],
         "rating": 3,
         "categories": [
-            "category1",
-            "category2",
-            "category3"
+            "Electronics",
+            "Sports and Fitness",
+            "Phones and Accessories"
         ],
         "createdBy": "648a57144f25acb849aa5115"
     },
     {
-        "name": "Apple watch",
+        "name": "Apple Watch",
         "price": 500,
         "quantity": 20,
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam feugiat sem non massa sagittis.",
@@ -129,9 +128,9 @@
         ],
         "rating": 1,
         "categories": [
-            "category1",
-            "category2",
-            "category3"
+            "Electronics",
+            "Sports and Fitness",
+            "Phones and Accessories"
         ],
         "createdBy": "648a57144f25acb849aa5115"
     }
