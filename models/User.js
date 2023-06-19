@@ -13,6 +13,12 @@ const userSchema = mongoose.Schema({
     enum: ['user', 'seller'],
     default: 'user',
   },
+  companyName: {
+    type: String,
+    required: function () {
+      return this.role === 'seller';
+    },
+  },
 });
 
 userSchema.path('email').validate(function (value) {

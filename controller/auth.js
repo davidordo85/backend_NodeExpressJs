@@ -74,4 +74,24 @@ router.get('/getUser', jwtAuth, async (req, res, next) => {
   res.json({ userId: _id, userRole: role });
 });
 
+router.get('/users/:id', jwtAuth, async (req, res, next) => {
+  const userId = req.params.id;
+
+  if (req.user._id.toString() !== userId) {
+    // El usuario no tiene permisos para acceder a los datos de otro usuario
+    return res.status(403).json({ error: 'Access denied' });
+  }
+
+  try {
+    const user = await User.findById(userId);
+    if (!user) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+
+    res.json(user);
+  } catch (err) {
+    next(err);
+  }
+});
+
 module.exports = router;
