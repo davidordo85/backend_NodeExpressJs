@@ -94,4 +94,28 @@ router.get('/users/:id', jwtAuth, async (req, res, next) => {
   }
 });
 
+router.put('/users/:id', jwtAuth, async (req, res, next) => {
+  const userId = req.params.id;
+  const { _id } = req.user;
+
+  if (_id.toString() !== userId) {
+    // El usuario no tiene permisos para modificar los datos de otro usuario
+    return res.status(403).json({ error: 'Access denied' });
+  }
+
+  try {
+    const updatedUser = await User.findByIdAndUpdate(userId, req.body, {
+      new: true,
+    });
+
+    if (!updatedUser) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+
+    res.json(updatedUser);
+  } catch (err) {
+    next(err);
+  }
+});
+
 module.exports = router;
