@@ -38,6 +38,7 @@ async function initUsers() {
     name: 'administrator',
     birthdate: '1990-01-01',
     role: 'seller',
+    companyName: 'Watchmaking',
   });
   console.log(`Insert ${result.length} user${result.length > 1 ? 's' : ''}.`);
 }

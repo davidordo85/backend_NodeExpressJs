@@ -74,10 +74,11 @@ router.get('/getUser', jwtAuth, async (req, res, next) => {
   res.json({ userId: _id, userRole: role });
 });
 
-router.get('/users/:id', jwtAuth, async (req, res, next) => {
+router.get('/:id', jwtAuth, async (req, res, next) => {
   const userId = req.params.id;
 
   if (req.user._id.toString() !== userId) {
+    console.log(req.user._id, userId);
     // El usuario no tiene permisos para acceder a los datos de otro usuario
     return res.status(403).json({ error: 'Access denied' });
   }

@@ -92,12 +92,16 @@ const productsSchema = mongoose.Schema(
     },
     createdBy: {
       type: String,
-      required: true,
       index: true,
     },
     createdAt: {
       type: Date,
       default: Date.now,
+    },
+    creatorCompany: {
+      type: String,
+      required: true,
+      index: true,
     },
   },
   {

@@ -169,6 +169,7 @@ router.post('/', jwtAuth, upload.array('images'), async (req, res, next) => {
 
     // Agrega el ID del usuario autenticado como creador del producto
     productData.createdBy = req.user._id;
+    productData.creatorCompany = req.user.companyName;
 
     // Agrega la fecha de creación actual como createdAt
     productData.createdAt = new Date();
