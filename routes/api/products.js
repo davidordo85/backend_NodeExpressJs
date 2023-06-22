@@ -32,6 +32,7 @@ router.get('/', async function (req, res, next) {
       category,
       categories,
       createdAt,
+      creatorCompany,
       createdBy,
       limit,
       skip,
@@ -67,6 +68,10 @@ router.get('/', async function (req, res, next) {
 
     if (createdBy) {
       filter.createdBy = createdBy;
+    }
+
+    if (creatorCompany) {
+      filter.creatorCompany = creatorCompany;
     }
 
     const parsedLimit = parseInt(limit, 10);
