@@ -40,56 +40,65 @@ cp .env.example .env
 
 ### User
 
-- **Login**
+- <span style="color: gold; font-size: 1.25rem">Login</span>
 
-  Endpoint: `api/v1/user/login`
-  Method: `POST`
-  Description: Allows a user to log in.
-  Request Parameters:
+  - Endpoint: `api/v1/user/login`
+
+  - Method: `POST`
+
+  - Description: Allows a user to log in.
+
+  **Request Parameters:**
 
   - `email`: User's email (required string).
   - `password`: User's password (required string).
 
-- **Registration**
+- <span style="color: gold; font-size: 1.25rem">Registration</span>
 
-  Endpoint: `api/v1/user/registration`
-  Method: `POST`
-  Description: Allows a user to register in the application.
-  Request Parameters:
+  - Endpoint: `api/v1/user/registration`
+
+  - Method: `POST`
+
+  - Description: Allows a user to register in the application.
+
+  **Request Parameters:**
 
   - `name`: User's name (required string).
   - `email`: User's email (required string).
   - `birthdate`: User's birth date (required string).
   - `password`: User's password (required string).
 
-- **Get User**
+- <span style="color: green; font-size: 1.25rem">Get User</span>
 
-  Endpoint: `api/v1/user`
-  Method: `GET`
-  Description: Retrieves user information.
-  Request Headers:
+  - Endpoint: `api/v1/user`
+  - Method: `GET`
+  - Description: Retrieves user information.
+
+  **Request Headers:**
 
   - `Authorization`: Bearer Token (required - must be the same user who created the product).
 
 ### Product
 
-- **Get Products**
+- <span style="color: green; font-size: 1.25rem">Get Products</span>
 
-  Endpoint: `api/v1/products`
-  Method: `GET`
-  Description: Retrieves a list of products.
-  Query Parameters:
+  - Endpoint: `api/v1/products`
+  - Method: `GET`
+  - Description: Retrieves a list of products.
+
+  **Query Parameters:**
 
   - `name`: Filters products by name (string).
   - `price`: Sorts products by price. Accepted values: `asc` (ascending), `desc` (descending).
   - `categories`: Filters products by categories (array of strings).
 
-- **Create Product**
+- <span style="color: gold; font-size: 1.25rem">Create Product</span>
 
-  Endpoint: `api/v1/products`
-  Method: `POST`
-  Description: Creates a new product.
-  Request Parameters:
+  - Endpoint: `api/v1/products`
+  - Method: `POST`
+  - Description: Creates a new product.
+
+  **Request Parameters:**
 
   - `name`: Product's name (required string).
   - `price`: Product's price (required number).
@@ -97,31 +106,61 @@ cp .env.example .env
   - `description`: Product's description (string).
   - `images`: Product's images (array of strings).
   - `categories`: Product's categories (array of strings).
-    Request Headers:
+    **Request Headers:**
   - `Authorization`: Bearer Token (required).
 
-- **Get Product by ID**
+- <span style="color: green; font-size: 1.25rem">Get Product by ID</span>
 
-  Endpoint: `api/v1/products/:id`
-  Method: `GET`
-  Description: Retrieves a product by its ID.
-  Request Parameters:
+  - Endpoint: `api/v1/products/:id`
+
+  - Method: `GET`
+
+  - Description: Retrieves a product by its ID.
+
+  **Request Parameters:**
 
   - `id`: Product's ID (required string).
 
-- **Delete Product**
+- <span style="color: orange; font-size: 1.25rem">Update Product</span>
 
-  Endpoint: `api/v1/products/:id`
-  Method: `DELETE`
-  Description: Deletes a product with the specified ID.
-  Request Parameters:
+  - Endpoint: `api/v1/products/:id`
+
+  - Method: `PUT`
+
+  - Description: Updates an existing product.
+
+  **Request Parameters:**
+
+  - `id` (required, string): Product ID.
+  - `name` (string): Updated product name.
+  - `price` (number): Updated product price.
+  - `quantity` (number): Updated product quantity.
+  - `description` (string): Updated product description.
+  - `images` (array of strings): Added images to the existing ones.
+  - `categories` (array of strings): Updated product categories.
+
+  **Request Headers:**
+
+  - `Authorization` (required): Bearer Token.
+
+- <span style="color: red; font-size: 1.25rem">Delete Product</span>
+
+  - Endpoint: `api/v1/products/:id`
+
+  - Method: `DELETE`
+
+  - Description: Deletes a product with the specified ID.
+
+  **Request Parameters:**
 
   - `id`: Product's ID (required string).
     Request Headers:
   - `Authorization`: Bearer Token (required - must be the same user who created the product).
 
-- **Get Categories**
+- <span style="color: green; font-size: 1.25rem">Get Categories</span>
 
-  Endpoint: `api/v1/products/categories`
-  Method: `GET`
-  Description: Retrieves a list of categories for products.
+  - Endpoint: `api/v1/products/categories`
+
+  - Method: `GET`
+
+  - Description: Retrieves a list of categories for products.
