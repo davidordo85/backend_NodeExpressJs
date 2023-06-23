@@ -195,8 +195,6 @@ router.post(
       if (productData.categories) {
         productData.categories = productData.categories.split(',');
       }
-
-      console.log(productData);
       const product = new Products(productData);
       const productCreated = await product.save();
       res.status(201).json({ result: productCreated });
@@ -214,7 +212,6 @@ router.put('/:id', jwtAuth, upload.array('images'), async (req, res, next) => {
     const uploadedImages = req.files.map(file => file.filename);
     const userId = req.user._id; // Obtén el ID del usuario autenticado
 
-    console.log(productData);
     // Verificar si el usuario autenticado es el creador del producto
     const product = await Products.findOne({ _id: _id, createdBy: userId });
 
@@ -231,7 +228,6 @@ router.put('/:id', jwtAuth, upload.array('images'), async (req, res, next) => {
 
     // Actualizar solo los campos proporcionados en productData
     Object.keys(productData).forEach(key => {
-      console.log(key, productData);
       product.set(key, productData[key]);
     });
 

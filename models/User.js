@@ -1,7 +1,7 @@
 'use strict';
 
 const mongoose = require('mongoose');
-const bcrypt = require('bcrypt');
+const { hashPassword, comparePassword } = require('../utils/passwordUtils');
 
 const userSchema = mongoose.Schema({
   email: { type: String, unique: true, required: true },
@@ -28,14 +28,6 @@ userSchema.path('email').validate(function (value) {
   return emailRegex.test(value);
 }, 'Invalid email format');
 
-const validatePassword = password => {
-  // Agrega aquí tu lógica de validación de contraseña
-  // Por ejemplo, verifica si cumple con ciertos requisitos mínimos
-  if (password.length < 8) {
-    throw new Error('Password should be at least 8 characters long');
-  }
-};
-
 userSchema.path('name').validate(function (value) {
   if (!value || value.trim().length === 0) {
     throw new Error('Name is required');
@@ -57,15 +49,12 @@ userSchema.path('birthdate').validate(function (value) {
 });
 
 userSchema.statics.hashPassword = async function (password) {
-  validatePassword(password); // Valida la contraseña antes de aplicar el hash
-
-  const saltRounds = 10;
-  const hashedPassword = await bcrypt.hash(password, saltRounds);
+  const hashedPassword = await hashPassword(password);
   return hashedPassword;
 };
 
 userSchema.methods.comparePassword = function (passwordClear) {
-  return bcrypt.compare(passwordClear, this.password);
+  return comparePassword(passwordClear, this.password);
 };
 
 const User = mongoose.model('User', userSchema);

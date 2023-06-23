@@ -109,6 +109,23 @@ const productsSchema = mongoose.Schema(
   },
 );
 
+productsSchema.pre('save', function (next) {
+  if (this.isModified('name')) {
+    this.name = capitalizeFirstLetter(this.name);
+  }
+  if (this.isModified('description')) {
+    this.description = capitalizeFirstLetter(this.description);
+  }
+  if (this.isModified('creatorCompany')) {
+    this.creatorCompany = capitalizeFirstLetter(this.creatorCompany);
+  }
+  next();
+});
+
+function capitalizeFirstLetter(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
 productsSchema.statics.list = function (filter, limit, skip, fields, sort) {
   const query = Products.find(filter);
 

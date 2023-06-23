@@ -10,7 +10,6 @@ const jwtAuth = require('../lib/jwtAuth');
 router.post('/login', async (req, res, next) => {
   try {
     const { email, password } = req.body;
-    console.log(email, password);
 
     const user = await User.findOne({ email });
 
@@ -42,7 +41,6 @@ router.post('/login', async (req, res, next) => {
 router.post('/register', async (req, res, next) => {
   try {
     const { email, password, name, birthdate } = req.body;
-    console.log(email, password, name, birthdate);
 
     const existingUser = await User.findOne({ email });
 
@@ -78,7 +76,6 @@ router.get('/:id', jwtAuth, async (req, res, next) => {
   const userId = req.params.id;
 
   if (req.user._id.toString() !== userId) {
-    console.log(req.user._id, userId);
     // El usuario no tiene permisos para acceder a los datos de otro usuario
     return res.status(403).json({ error: 'Access denied' });
   }
