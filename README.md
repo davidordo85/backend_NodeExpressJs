@@ -38,7 +38,7 @@ cp .env.example .env
 
 ## Routes
 
-### User
+## User
 
 - <span style="color: gold; font-size: 1.25rem">**🔒 Login**</span>
 
@@ -78,7 +78,7 @@ cp .env.example .env
 
   - `Authorization`: Bearer Token (required - must be the same user who created the product).
 
-### Product
+## Product
 
 - <span style="color: green; font-size: 1.25rem">**📦 Get Products**</span>
 
