@@ -4,7 +4,7 @@ var express = require('express');
 var router = express.Router();
 var path = require('path');
 const multer = require('multer');
-const jwtAuth = require('../../lib/jwtAuth');
+const { jwtAuth, getCompanyName } = require('../../lib');
 
 const Products = require('../../models/Products');
 
@@ -91,7 +91,7 @@ router.get('/', async function (req, res, next) {
   }
 });
 
-// Get /api/products/tags
+// Get /api/products/categories
 router.get('/categories', async (req, res) => {
   try {
     const dbCategories = await Products.distinct('categories'); // Obtener categorías de la base de datos
@@ -164,47 +164,57 @@ router.get('/:id', async (req, res, next) => {
  * POST /api/v1/products (body)
  */
 
-router.post('/', jwtAuth, upload.array('images'), async (req, res, next) => {
-  try {
-    const productData = req.body;
-    const images = req.files.map(file => file.filename); // Array con los nombres de las imágenes
+router.post(
+  '/',
+  jwtAuth,
+  getCompanyName,
+  upload.array('images'),
+  async (req, res, next) => {
+    try {
+      const productData = req.body;
+      const images = req.files.map(file => file.filename); // Array con los nombres de las imágenes
 
-    // Agrega el array de nombres de imágenes al objeto productData
-    productData.images = images;
+      // Agrega el array de nombres de imágenes al objeto productData
+      productData.images = images;
 
-    // Agrega el ID del usuario autenticado como creador del producto
-    productData.createdBy = req.user._id;
-    productData.creatorCompany = req.user.companyName;
+      // Agrega el ID del usuario autenticado como creador del producto
+      productData.createdBy = req.user._id;
 
-    // Agrega la fecha de creación actual como createdAt
-    productData.createdAt = new Date();
+      // Agrega el nombre de la compañia del usuario como compañia creadora del producto
+      productData.creatorCompany = req.companyName;
 
-    // Comprueba si el rol del usuario es "seller"
-    if (req.user.role !== 'seller') {
-      return res.status(403).json({ error: 'Forbidden' });
+      // Agrega la fecha de creación actual como createdAt
+      productData.createdAt = new Date();
+
+      // Comprueba si el rol del usuario es "seller"
+      if (req.user.role !== 'seller') {
+        return res.status(403).json({ error: 'Forbidden' });
+      }
+
+      // Verifica si se proporcionaron categorías y las convierte en un array
+      if (productData.categories) {
+        productData.categories = productData.categories.split(',');
+      }
+
+      console.log(productData);
+      const product = new Products(productData);
+      const productCreated = await product.save();
+      res.status(201).json({ result: productCreated });
+    } catch (error) {
+      next(error);
     }
-
-    // Verifica si se proporcionaron categorías y las convierte en un array
-    if (productData.categories) {
-      productData.categories = productData.categories.split(',');
-    }
-
-    console.log(productData);
-    const product = new Products(productData);
-    const productCreated = await product.save();
-    res.status(201).json({ result: productCreated });
-  } catch (error) {
-    next(error);
-  }
-});
+  },
+);
 
 // PUT /api/products/:id (body)
-router.put('/:id', jwtAuth, async (req, res, next) => {
+router.put('/:id', jwtAuth, upload.array('images'), async (req, res, next) => {
   try {
     const _id = req.params.id;
     const productData = req.body;
+    const uploadedImages = req.files.map(file => file.filename);
     const userId = req.user._id; // Obtén el ID del usuario autenticado
 
+    console.log(productData);
     // Verificar si el usuario autenticado es el creador del producto
     const product = await Products.findOne({ _id: _id, createdBy: userId });
 
@@ -212,17 +222,22 @@ router.put('/:id', jwtAuth, async (req, res, next) => {
       return res.status(401).json({ error: 'Unauthorized' });
     }
 
-    const updateProduct = await Products.findOneAndUpdate(
-      { _id: _id },
-      productData,
-      {
-        new: true,
-        useFindAndModify: false,
-      },
-    );
-    // usamos { new: true } para que nos devuelva el producto actualizado
+    const existingImages = product.images || [];
+    const allImages = [...existingImages, ...uploadedImages];
+    productData.images = allImages;
+    if (productData.categories) {
+      productData.categories = productData.categories.split(',');
+    }
 
-    res.json({ result: updateProduct });
+    // Actualizar solo los campos proporcionados en productData
+    Object.keys(productData).forEach(key => {
+      console.log(key, productData);
+      product.set(key, productData[key]);
+    });
+
+    const updatedProduct = await product.save();
+
+    res.json({ result: updatedProduct });
   } catch (error) {
     next(error);
   }
