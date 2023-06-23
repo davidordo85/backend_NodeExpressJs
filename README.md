@@ -40,7 +40,7 @@ cp .env.example .env
 
 ### User
 
-- <span style="color: gold; font-size: 1.25rem">Login</span>
+- <span style="color: gold; font-size: 1.25rem">**Login**</span>
 
   - Endpoint: `api/v1/user/login`
 
@@ -53,7 +53,7 @@ cp .env.example .env
   - `email`: User's email (required string).
   - `password`: User's password (required string).
 
-- <span style="color: gold; font-size: 1.25rem">Registration</span>
+- <span style="color: gold; font-size: 1.25rem">**Registration**</span>
 
   - Endpoint: `api/v1/user/registration`
 
@@ -68,7 +68,7 @@ cp .env.example .env
   - `birthdate`: User's birth date (required string).
   - `password`: User's password (required string).
 
-- <span style="color: green; font-size: 1.25rem">Get User</span>
+- <span style="color: green; font-size: 1.25rem">**Get User**</span>
 
   - Endpoint: `api/v1/user`
   - Method: `GET`
@@ -80,7 +80,7 @@ cp .env.example .env
 
 ### Product
 
-- <span style="color: green; font-size: 1.25rem">Get Products</span>
+- <span style="color: green; font-size: 1.25rem">**Get Products**</span>
 
   - Endpoint: `api/v1/products`
   - Method: `GET`
@@ -109,7 +109,7 @@ cp .env.example .env
     **Request Headers:**
   - `Authorization`: Bearer Token (required).
 
-- <span style="color: green; font-size: 1.25rem">Get Product by ID</span>
+- <span style="color: green; font-size: 1.25rem">**Get Product by ID**</span>
 
   - Endpoint: `api/v1/products/:id`
 
@@ -121,7 +121,7 @@ cp .env.example .env
 
   - `id`: Product's ID (required string).
 
-- <span style="color: orange; font-size: 1.25rem">Update Product</span>
+- <span style="color: orange; font-size: 1.25rem">**Update Product**</span>
 
   - Endpoint: `api/v1/products/:id`
 
@@ -143,7 +143,7 @@ cp .env.example .env
 
   - `Authorization` (required): Bearer Token.
 
-- <span style="color: red; font-size: 1.25rem">Delete Product</span>
+- <span style="color: red; font-size: 1.25rem">**Delete Product**</span>
 
   - Endpoint: `api/v1/products/:id`
 
@@ -157,7 +157,7 @@ cp .env.example .env
     Request Headers:
   - `Authorization`: Bearer Token (required - must be the same user who created the product).
 
-- <span style="color: green; font-size: 1.25rem">Get Categories</span>
+- <span style="color: green; font-size: 1.25rem">**Get Categories**</span>
 
   - Endpoint: `api/v1/products/categories`
 
