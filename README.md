@@ -44,7 +44,7 @@ cp .env.example .env
 
   - Endpoint: `api/v1/user/login`
 
-  - Method: `POST`
+  - Method: `📤 POST`
 
   - Description: Allows a user to log in.
 
@@ -57,7 +57,7 @@ cp .env.example .env
 
   - Endpoint: `api/v1/user/registration`
 
-  - Method: `POST`
+  - Method: `📤 POST`
 
   - Description: Allows a user to register in the application.
 
@@ -71,7 +71,7 @@ cp .env.example .env
 - <span style="color: green; font-size: 1.25rem">**👤 Get User**</span>
 
   - Endpoint: `api/v1/user`
-  - Method: `GET`
+  - Method: ` 📥 GET`
   - Description: Retrieves user information.
 
   **Request Headers:**
@@ -83,7 +83,7 @@ cp .env.example .env
 - <span style="color: green; font-size: 1.25rem">**📦 Get Products**</span>
 
   - Endpoint: `api/v1/products`
-  - Method: `GET`
+  - Method: ` 📥 GET`
   - Description: Retrieves a list of products.
 
   **Query Parameters:**
@@ -95,7 +95,7 @@ cp .env.example .env
 - <span style="color: gold; font-size: 1.25rem">➕ Create Product</span>
 
   - Endpoint: `api/v1/products`
-  - Method: `POST`
+  - Method: `📤 POST`
   - Description: Creates a new product.
 
   **Request Parameters:**
@@ -113,7 +113,7 @@ cp .env.example .env
 
   - Endpoint: `api/v1/products/:id`
 
-  - Method: `GET`
+  - Method: ` 📥 GET`
 
   - Description: Retrieves a product by its ID.
 
@@ -125,7 +125,7 @@ cp .env.example .env
 
   - Endpoint: `api/v1/products/:id`
 
-  - Method: `PUT`
+  - Method: `📝 PUT`
 
   - Description: Updates an existing product.
 
@@ -147,7 +147,7 @@ cp .env.example .env
 
   - Endpoint: `api/v1/products/:id`
 
-  - Method: `DELETE`
+  - Method: `🗑️ DELETE`
 
   - Description: Deletes a product with the specified ID.
 
@@ -161,6 +161,6 @@ cp .env.example .env
 
   - Endpoint: `api/v1/products/categories`
 
-  - Method: `GET`
+  - Method: ` 📥 GET`
 
   - Description: Retrieves a list of categories for products.
