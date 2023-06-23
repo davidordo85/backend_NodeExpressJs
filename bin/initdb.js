@@ -21,7 +21,15 @@ async function initProducts() {
     const delet = await Products.deleteMany();
     console.log('Deleted:', delet);
 
-    const chargedProducts = await Products.insertMany(fileJson);
+    const user = await User.findOne({ email: 'admin@gmail.com' });
+
+    const products = fileJson.map(product => ({
+      ...product,
+      createdBy: user._id,
+      creatorCompany: user.companyName,
+    }));
+
+    const chargedProducts = await Products.insertMany(products);
     console.log('Loaded products from products.json:', chargedProducts);
   } catch (error) {
     console.log('Initialization failed:', error);
